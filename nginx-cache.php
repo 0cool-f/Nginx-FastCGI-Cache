@@ -69,14 +69,14 @@ class NginxCache {
 
 	}
 
-	private function get_cache_path()
-	{
+	private function get_cache_path() {
 
-		if (defined('NGINX_CACHE_PATH')) {
-			return sanitize_text_field(NGINX_CACHE_PATH);
+		if ( defined( 'NGINX_CACHE_PATH' ) ) {
+			return sanitize_text_field( NGINX_CACHE_PATH );
 		}
 
-		return get_option('nginx_cache_path');
+		return get_option( 'nginx_cache_path' );
+
 	}
 
 	public function add_settings_notices() {
