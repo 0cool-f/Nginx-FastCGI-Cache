@@ -69,6 +69,16 @@ class NginxCache {
 
 	}
 
+	private function get_cache_path()
+	{
+
+		if (defined('NGINX_CACHE_PATH')) {
+			return sanitize_text_field(NGINX_CACHE_PATH);
+		}
+
+		return get_option('nginx_cache_path');
+	}
+
 	public function add_settings_notices() {
 
 		$path_error = $this->is_valid_path();
@@ -171,7 +181,7 @@ class NginxCache {
 
 		global $wp_filesystem;
 
-		$path = get_option( 'nginx_cache_path' );
+		$path = $this->get_cache_path();
 
 		if ( empty( $path ) ) {
 			return new WP_Error( 'empty', __( '"Cache Zone Path" is not set.', 'nginx-cache' ) );
@@ -248,7 +258,7 @@ class NginxCache {
 			return false;
 		}
 
-		$path = get_option( 'nginx_cache_path' );
+		$path = $this->get_cache_path();
 		$path_error = $this->is_valid_path();
 
 		// abort if cache zone path is not valid
@@ -285,7 +295,7 @@ class NginxCache {
 
 	private function initialize_filesystem() {
 
-		$path = get_option( 'nginx_cache_path' );
+		$path = $this->get_cache_path();
 
 		// if the cache directory doesn't exist, try to create it
 		if ( ! file_exists( $path ) ) {
