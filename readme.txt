@@ -3,7 +3,7 @@ Contributors: tillkruess
 Donate link: https://github.com/sponsors/tillkruss
 Tags: nginx, cache, fastcgi, purge, flush
 Requires at least: 3.1
-Tested up to: 6.7
+Tested up to: 7.0
 Stable tag: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
