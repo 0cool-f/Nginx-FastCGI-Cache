@@ -22,7 +22,6 @@
 						<p class="description"><?php _e( 'The cache zone path is set via the <code>NGINX_CACHE_PATH</code> constant in <code>wp-config.php</code> and cannot be changed here.', 'nginx-cache' ); ?></p>
 					<?php else : ?>
 						<p class="description"><?php _e( 'The absolute path to the location of the cache zone, specified in the Nginx <code>fastcgi_cache_path</code> or <code>proxy_cache_path</code> directive.', 'nginx-cache' ); ?></p>
-						<p class="description"><?php _e( 'You can also define this path permanently by adding <code>define( \'NGINX_CACHE_PATH\', \'/data/nginx/cache\' );</code> to your <code>wp-config.php</code>.', 'nginx-cache' ); ?></p>
 					<?php endif; ?>
 				</td>
 			</tr>
