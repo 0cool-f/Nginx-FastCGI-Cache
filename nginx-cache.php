@@ -229,7 +229,7 @@ class NginxCache {
 			}
 
 			// validate subdirectories recursively
-			if ( $item[ 'type' ] === 'd' && ! $this->validate_dirlist( $item[ 'files' ] ) ) {
+			if ( $item[ 'type' ] === 'd' && is_array( $item[ 'files' ] ) && ! $this->validate_dirlist( $item[ 'files' ] ) ) {
 				return false;
 			}
 
